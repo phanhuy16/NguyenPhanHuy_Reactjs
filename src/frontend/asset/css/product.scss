@@ -1,0 +1,467 @@
+.item {
+  width: 100%;
+  margin-bottom: 70px;
+
+  .card {
+    max-width: 275px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-radius: 0;
+
+    .price {
+      color: black;
+    }
+
+    .star_container {
+      i {
+        color: yellow;
+      }
+    }
+  }
+}
+
+
+.fw-bold {
+  font-weight: 600;
+  color: #11e6f4;
+}
+
+.btn-link {
+  background-color: black;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 1px;
+
+  &:hover {
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+  }
+}
+
+//-----------------------------------
+.layout-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+///------------Not found--------------
+.grid {
+  display: grid;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.sm\:py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.lg\:px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-indigo-600 {
+  color: #4f46e5;
+}
+
+.text-gray-900 {
+  color: #1f2937;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-gray-600 {
+  color: #6b7280;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.leading-7 {
+  line-height: 1.75rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-x-6>*+* {
+  margin-left: 1.5rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.bg-indigo-600 {
+  background-color: #4338ca;
+}
+
+.px-3\.5 {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hover\:bg-indigo-500:hover {
+  background-color: #4338ca;
+}
+
+.focus-visible\:outline:focus {
+  outline: 2px solid #fff;
+}
+
+.focus-visible\:outline-offset:focus {
+  outline-offset: 2px;
+}
+
+.focus-visible\:outline-indigo-600:focus {
+  outline-color: #4338ca;
+}
+
+//------------Detail-------------------
+.detail {
+  display: flex;
+  padding: 40px;
+  margin-left: 50px;
+
+  .link-home {
+    color: gray;
+    display: block;
+    margin-bottom: 20px;
+
+    &:hover {
+      color: #11e6f4;
+    }
+  }
+
+  .img-detail {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    padding: 40px;
+    margin-right: 100px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .detail-content {
+    padding: 30px;
+
+    .detail-title {
+      margin-bottom: 50px;
+      font-weight: 600;
+    }
+
+    .detail-price {
+      margin-bottom: 42px;
+
+      del {
+        margin-right: 20px;
+      }
+
+      sup {
+        display: inline-block;
+        font-weight: 600;
+        margin-right: 5px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid black;
+      }
+    }
+
+    .detail-text {
+      margin-bottom: 42px;
+    }
+  }
+
+  .quantity {
+    display: flex;
+    align-items: center;
+
+    button {
+      padding: 5px 12px;
+      font-size: 16px;
+      border: 1px solid #f2f2f2;
+      background-color: #11e6f4;
+      cursor: pointer;
+      outline: none;
+      border-radius: 2px;
+
+      &:hover {
+        background-color: #fff;
+        color: #11e6f4;
+      }
+    }
+
+    .add-cart {
+      margin-left: 50px;
+    }
+
+    span {
+      margin: 0 10px;
+    }
+  }
+
+  .count {
+    display: block;
+    padding: 3px;
+    outline: none;
+    width: 80px;
+  }
+
+  .quantity #cart-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+    /* Màu của thông báo có thể thay đổi tùy ý */
+  }
+}
+
+
+
+//-------------Register--------------------
+
+//-------------dropdown-------------------
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.submenu {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-25px);
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+.nav-item:hover .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(11px);
+}
+
+.submenu li {
+  display: block;
+}
+
+.submenu li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.submenu li a:hover {
+  background-color: #f2f2f2;
+}
+
+//---------------users----------------------
+.user:hover .list-user {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(10%, 45%);
+}
+
+.list-user {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  top: 50%;
+  right: 0;
+  transform: translate(20%, 45%);
+  position: absolute;
+  z-index: 10;
+  border-radius: 1px;
+
+  .item-user {
+    .link {
+      color: black;
+    }
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+//------------icon shopping-cart---------------
+.shopping-cart {
+  i {
+    color: white;
+    font-size: 20px;
+  }
+}
+
+//----------cartItem---------------------
+/* Phần tiêu đề */
+.text-center {
+  text-align: center;
+}
+
+/* Bảng giỏ hàng */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Tiêu đề của bảng */
+.table th {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Nội dung của bảng */
+.table td {
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Nút Xóa giỏ hàng */
+.btn-warning {
+  padding: 9px;
+}
+
+/* Nút Thanh toán */
+.btn-info {
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+/* Dòng tổng tiền */
+.total-row th {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  text-align: right;
+}
+
+.total-row td {
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Liên kết Thanh toán */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
