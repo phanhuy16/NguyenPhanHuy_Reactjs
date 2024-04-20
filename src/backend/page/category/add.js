@@ -47,12 +47,13 @@ const CategoryAdd = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Thêm danh mục</h2>
+    <div className="container py-3" style={{ width: "50%" }}>
+      <h2 className="fw-bold text-center">Thêm danh mục</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="categoryName">Category Name:</label>
           <input
+            className="form-control"
             type="text"
             id="categoryName"
             name="categoryName"
@@ -63,6 +64,7 @@ const CategoryAdd = () => {
         <div className="form-group">
           <label htmlFor="slug">Slug:</label>
           <input
+            className="form-control"
             type="text"
             id="slug"
             name="slug"
@@ -73,6 +75,7 @@ const CategoryAdd = () => {
         <div className="form-group">
           <label htmlFor="parentCategory">Parent Category:</label>
           <select
+            className="form-control"
             id="parentCategory"
             name="parentCategory"
             value={parentId}

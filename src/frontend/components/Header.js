@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import UserContext from "../context/useContext";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import apiCategory from "../../api/apiCategory";
 import "../asset/css/product.scss";
 import { useSelector } from "react-redux";
@@ -11,7 +11,7 @@ export default function Header() {
   if (user) {
     var username = user.username;
   } else {
-    var username = "";
+    // var username = "";
   }
 
   const [subMenu, setSubMenu] = useState([]);
@@ -28,7 +28,6 @@ export default function Header() {
           };
         });
         setSubMenu(menuData);
-        // console.log(menuData);
       } catch (error) {
         console.log(error.message);
       }

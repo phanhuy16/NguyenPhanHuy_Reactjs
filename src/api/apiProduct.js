@@ -43,6 +43,10 @@ const apiProduct = {
   updataProduct: (id, data) => {
     return axiosInstance.put(`/products/${id}`, data);
   },
+  //xoá sản phẩm
+  delProductById: (id) => {
+    return axiosInstance.delete(`/products/${id}`);
+  },
 };
 
 export default apiProduct;

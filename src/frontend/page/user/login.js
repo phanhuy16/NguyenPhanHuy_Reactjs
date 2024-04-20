@@ -29,7 +29,7 @@ const LoginUser = () => {
 
   return (
     <>
-      <div className="container py-3">
+      <div className="container py-3" style={{ width: "30%" }}>
         <h1 className="fw-bold text-center">Login</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -66,9 +66,7 @@ const LoginUser = () => {
               Check me out
             </label>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+          <button className="btn btn-primary text-primary">Submit</button>
         </form>
       </div>
     </>

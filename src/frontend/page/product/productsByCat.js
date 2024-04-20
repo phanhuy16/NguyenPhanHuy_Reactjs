@@ -16,6 +16,7 @@ const ProductsByCat = () => {
             id: item.id,
             name: item.attributes.product_name,
             price: item.attributes.price,
+            slug: item.attributes.slug,
             image: item.attributes.image.data.attributes.url,
           };
         });
@@ -31,7 +32,11 @@ const ProductsByCat = () => {
       <div className="'row px-5 products">
         <h1>Sản phẩm của chúng tôi</h1>
         {productsByCat.map((product, index) => {
-          return <ProductItem key={index} product={product} />;
+          return (
+            <>
+              <ProductItem key={index} product={product} />
+            </>
+          );
         })}
       </div>
     </>

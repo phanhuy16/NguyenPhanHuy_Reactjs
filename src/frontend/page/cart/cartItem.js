@@ -10,28 +10,6 @@ const CartItem = (props) => {
   };
   return (
     <>
-      {/* <tr>
-        <td>
-          <img
-            style={{ width: "100px" }}
-            src={imageURL + props.item.image}
-            alt="Anh"
-          />
-        </td>
-        <td>{props.item.name}</td>
-        <td>{props.item.price}</td>
-        <td>{props.item.quantity}</td>
-        <td>{props.item.price * props.item.quantity}</td>
-        <td>
-          <button
-            type="button"
-            className="btn btn-danger"
-            onClick={() => removeItem(props.item)}
-          >
-            <FaTrashAlt />
-          </button>
-        </td>
-      </tr> */}
       <tr className="cart-item">
         <td className="cart-item-image">
           <img

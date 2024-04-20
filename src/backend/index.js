@@ -7,19 +7,11 @@ const IndexAdmin = () => {
       <div className="">
         <nav className="navigate">
           <div className="navigate-brand">
-            <img
-              className="logo"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Your Company"
-            />
+            {/* <img src={require("../frontend/asset/images/logo.png")} alt="" /> */}
+            <span className="fs-1 text-info fw-bold">Admin</span>
           </div>
           <div className="navigate-menu">
             <ul className="navigate-nav">
-              <li className="navi-item">
-                <Link to="" className="navi-link active">
-                  Dashboard
-                </Link>
-              </li>
               <li className="navi-item">
                 <Link to="#" className="navi-link">
                   Danh sách quản lý
@@ -63,10 +55,10 @@ const IndexAdmin = () => {
             <FaUserCircle />
             <ul className="dropdownn-menu">
               <li>
-                <Link to="#">Your Profile</Link>
+                <Link to="#">Settings</Link>
               </li>
               <li>
-                <Link to="#">Settings</Link>
+                <Link to="#">Login</Link>
               </li>
               <li>
                 <Link to="#">Sign out</Link>

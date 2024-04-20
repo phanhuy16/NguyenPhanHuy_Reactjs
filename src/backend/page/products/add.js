@@ -91,7 +91,7 @@ const ProductAdd = () => {
   return (
     <>
       <div style={{ width: "90%", margin: "auto" }}>
-        <h1>Thêm sản phẩm</h1>
+        <h1 className="fw-bold text-center">Thêm sản phẩm</h1>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-6">

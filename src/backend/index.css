@@ -15,7 +15,7 @@ Reset * {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1a202c;
+  background-color: #415663;
   padding: 10px 20px;
   border-bottom: 1px solid #4a5568;
 }
@@ -178,8 +178,7 @@ label {
 
 input[type="text"],
 select {
-  width: calc(100% - 24px);
-  /* Adjusted width to account for padding */
+  /* width: calc(100% - 24px); */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;

@@ -63,7 +63,7 @@ const CategoryEdit = () => {
   };
   return (
     <>
-      <h1>Sửa danh mục</h1>
+      <h1 className="fw-bold text-center">Sửa danh mục</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="categoryName">Category Name:</label>

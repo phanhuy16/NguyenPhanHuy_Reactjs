@@ -4,6 +4,8 @@ import apiCategory from "../../../api/apiCategory";
 import "../../index.css";
 import apiProduct from "../../../api/apiProduct";
 import apiBrand from "../../../api/apiBrand";
+import { imageURL } from "../../../api/config";
+import axiosInstance from "../../../api/axios";
 const ProductEdit = () => {
   const { slug } = useParams();
   const [productName, setProductName] = useState("");
@@ -15,6 +17,8 @@ const ProductEdit = () => {
   const [salePrice, setSalePrice] = useState(0);
   const [image, setImage] = useState(null);
   const [brandId, setBrandId] = useState("");
+  const [productId, setProductId] = useState(0);
+
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
   const [imageId, setImageId] = useState(0);
@@ -22,19 +26,20 @@ const ProductEdit = () => {
 
   useEffect(() => {
     apiProduct.getDetailProductBySlug(slug).then((res) => {
-      console.log("Response:", res);
       try {
         const productAttributes = res.data[0].attributes;
+
+        setProductId(res.data[0].id);
         setProductName(productAttributes.product_name);
         setPrice(productAttributes.price);
         setSlugProduct(productAttributes.slug);
         setCatId(productAttributes.cat_id);
-        setImage(productAttributes.iamge.data.attributes.url);
+        setImage(productAttributes.image.data.attributes.url);
         setSalePrice(productAttributes.sale_price);
-        setDescription(productAttributes.descriptoin);
+        setDescription(productAttributes.description);
         setIsOnSale(productAttributes.is_on_sale);
         setBrandId(productAttributes.brand_id);
-        setImageId(productAttributes.iamge.data[0].id);
+        setImageId(productAttributes.image.data[0].id);
       } catch (error) {
         console.log("Error: ", error.message);
       }
@@ -76,8 +81,9 @@ const ProductEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const productData = {
+      id: productId,
       product_name: productName,
-      slug: slug,
+      slug: slugProduct,
       cat_id: catId,
       price: price,
       description: description,
@@ -96,14 +102,29 @@ const ProductEdit = () => {
     const fileObject = file.get("files");
     if (fileObject instanceof File) {
       console.log("File object  name: ", fileObject.name);
+      if (fileObject !== "") {
+        axiosInstance.enableUploadFile();
+        const res = await axiosInstance.post("/upload", file);
+        const fileId = res.data[0].id;
+        productData.image[0] = fileId;
+        console.log("File Id: ", productData.image[0]);
+      } else {
+        console.log("No file selectd");
+      }
     } else {
       console.log("File  object is not as file");
     }
+    axiosInstance.enableJson();
+    const responseProduct = await apiProduct.updataProduct(productData.id, {
+      data: productData,
+    });
+    console.log("Response: ", responseProduct);
+    navigate("/admin/products/1");
   };
   return (
     <>
       <div style={{ width: "90%", margin: "auto" }}>
-        <h1>Sửa sản phẩm</h1>
+        <h1 className="fw-bold text-center">Sửa sản phẩm</h1>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-md-6">
@@ -218,6 +239,7 @@ const ProductEdit = () => {
                 <label htmlFor="slug" className="from-label">
                   Hình ảnh
                 </label>
+                <img src={imageURL + image} alt={image} width="100px" />
                 <input
                   type="file"
                   id="image"

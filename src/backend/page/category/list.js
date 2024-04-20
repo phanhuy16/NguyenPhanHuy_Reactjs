@@ -51,48 +51,45 @@ const CategoryList = () => {
         </Link>
       </button>
       <table className="table table-striped table-bordered">
-        <tr>
-          <th>Id</th>
-          <th>Danh mục</th>
-          <th>Danh mục cha</th>
-          <th>Slug</th>
-          <th>Hành động</th>
-        </tr>
-        {categories.map((item, index) => {
-          return (
-            <tr key={index}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>
-                {/* {categories.map((category, index) => {
-                  if (category.id === item.parent_id) {
-                    return category.name;
-                  }
-                })} */}
-                {categoryNamesMap[item.parent_id]}
-              </td>
-              <td>{item.slug}</td>
-              <td>
-                <button style={{ border: "none" }}>
-                  <Link
-                    className="btn btn-succcess"
-                    to={`/admin/editCategory/${item.id}`}
-                  >
-                    Sửa
-                  </Link>
-                </button>
-                <button style={{ border: "none" }}>
-                  <Link
-                    className="btn btn-info"
-                    onClick={() => delCategory(item.id)}
-                  >
-                    Xoá
-                  </Link>
-                </button>
-              </td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Danh mục</th>
+            <th>Danh mục cha</th>
+            <th>Slug</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          {categories.map((item, index) => {
+            return (
+              <tr key={index}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{categoryNamesMap[item.parent_id]}</td>
+                <td>{item.slug}</td>
+                <td>
+                  <button style={{ border: "none" }}>
+                    <Link
+                      className="btn btn-succcess"
+                      to={`/admin/editCategory/${item.id}`}
+                    >
+                      Sửa
+                    </Link>
+                  </button>
+                  <button style={{ border: "none" }}>
+                    <Link
+                      className="btn btn-info"
+                      onClick={() => delCategory(item.id)}
+                    >
+                      Xoá
+                    </Link>
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );

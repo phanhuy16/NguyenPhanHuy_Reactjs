@@ -17,7 +17,6 @@ const Products = () => {
             image: product.attributes.image.data.attributes.url,
           };
         });
-        // console.log("ProductData: ", productData);
         setProducts(productData);
       } catch (err) {
         console.log("Error: ", err.message);
