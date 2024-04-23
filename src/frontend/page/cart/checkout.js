@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import UserContext from "../../context/useContext";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CheckOut = () => {
   const { user } = useContext(UserContext);
@@ -62,9 +63,11 @@ const CheckOut = () => {
             </div>
 
             <div className="col-12">
-              <button type="submit" className="btn btn-outline-primary">
-                Sign in
-              </button>
+              <Link to="/">
+                <button type="submit" className="btn btn-outline-primary">
+                  Pay
+                </button>
+              </Link>
             </div>
           </form>
         </form>

@@ -7,7 +7,6 @@ const IndexAdmin = () => {
       <div className="">
         <nav className="navigate">
           <div className="navigate-brand">
-            {/* <img src={require("../frontend/asset/images/logo.png")} alt="" /> */}
             <span className="fs-1 text-info fw-bold">Admin</span>
           </div>
           <div className="navigate-menu">
@@ -24,13 +23,13 @@ const IndexAdmin = () => {
                     <Link to="/admin/products/1">Sản phẩm</Link>
                   </li>
                   <li>
-                    <Link to="#">Người dùng</Link>
+                    <Link to="/admin/listuser">Người dùng</Link>
                   </li>
                   <li>
                     <Link to="#">Đơn hàng</Link>
                   </li>
                   <li>
-                    <Link to="#">Nhà cung cấp</Link>
+                    <Link to="/admin/brands">Nhà cung cấp</Link>
                   </li>
                 </ul>
               </li>
@@ -70,6 +69,9 @@ const IndexAdmin = () => {
       <div className="container py-5">
         <Outlet />
       </div>
+      <div class="mt-5 p-4 bg-dark text-white text-center">
+        <p>Footer</p>
+      </div>{" "}
     </>
   );
 };

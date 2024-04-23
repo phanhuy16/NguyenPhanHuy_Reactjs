@@ -63,60 +63,66 @@ const CategoryEdit = () => {
   };
   return (
     <>
-      <h1 className="fw-bold text-center">Sửa danh mục</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="categoryName">Category Name:</label>
-          <input
-            type="text"
-            id="categoryName"
-            name="categoryName"
-            value={catName}
-            onChange={(e) => setCatName(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="slug">Slug:</label>
-          <input
-            type="text"
-            id="slug"
-            name="slug"
-            value={slug}
-            onChange={(e) => setSlug(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="parentCategory">Parent Category:</label>
-          <select
-            id="parentCategory"
-            name="parentCategory"
-            value={parentId}
-            onChange={(e) => setPrarentId(e.target.value)}
-          >
-            <option value="">None</option>
-            {categories.map((item, index) => {
-              return (
-                <option key={index} value={item.id}>
-                  {item.name}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="parentCategory">Status:</label>
-          <select
-            id="parentCategory"
-            name="parentCategory"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
-          >
-            <option value="0">Không hiển thị</option>
-            <option value="1">Hiển thị</option>
-          </select>
-        </div>
-        <button type="submit">Edit Category</button>
-      </form>
+      <div className="container py-3" style={{ width: "50%" }}>
+        <h1 className="fw-bold text-center mb-3">Sửa danh mục</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="categoryName">Category Name:</label>
+            <input
+              className="form-control"
+              type="text"
+              id="categoryName"
+              name="categoryName"
+              value={catName}
+              onChange={(e) => setCatName(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="slug">Slug:</label>
+            <input
+              className="form-control"
+              type="text"
+              id="slug"
+              name="slug"
+              value={slug}
+              onChange={(e) => setSlug(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="parentCategory">Parent Category:</label>
+            <select
+              className="form-control"
+              id="parentCategory"
+              name="parentCategory"
+              value={parentId}
+              onChange={(e) => setPrarentId(e.target.value)}
+            >
+              <option value="">None</option>
+              {categories.map((item, index) => {
+                return (
+                  <option key={index} value={item.id}>
+                    {item.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="parentCategory">Status:</label>
+            <select
+              className="form-control"
+              id="parentCategory"
+              name="parentCategory"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+            >
+              <option value="0">Không hiển thị</option>
+              <option value="1">Hiển thị</option>
+            </select>
+          </div>
+          <button type="submit">Edit Category</button>
+        </form>
+      </div>
     </>
   );
 };

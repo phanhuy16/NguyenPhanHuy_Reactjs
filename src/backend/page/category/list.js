@@ -18,6 +18,7 @@ const CategoryList = () => {
             slug: item.attributes.slug,
           };
         });
+        console.log("Data: ", categoryData);
         setCategories(categoryData);
 
         const namesMap = {};
@@ -44,9 +45,9 @@ const CategoryList = () => {
 
   return (
     <>
-      <h1>Danh sách danh mục</h1>
+      <h3 className="text-success">Danh sách danh mục</h3>
       <button style={{ border: "none" }}>
-        <Link className="btn btn-primary mb-2" to="/admin/addCategory">
+        <Link className="btn btn-primary mb-4" to="/admin/addCategory">
           Thêm danh mục
         </Link>
       </button>
@@ -71,7 +72,7 @@ const CategoryList = () => {
                 <td>
                   <button style={{ border: "none" }}>
                     <Link
-                      className="btn btn-succcess"
+                      className="btn btn-success"
                       to={`/admin/editCategory/${item.id}`}
                     >
                       Sửa
@@ -79,7 +80,7 @@ const CategoryList = () => {
                   </button>
                   <button style={{ border: "none" }}>
                     <Link
-                      className="btn btn-info"
+                      className="btn btn-danger"
                       onClick={() => delCategory(item.id)}
                     >
                       Xoá

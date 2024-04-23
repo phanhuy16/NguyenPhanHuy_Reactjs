@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import apiProduct from "../../../api/apiProduct";
 import { Link, useParams } from "react-router-dom";
-import { BsEmojiHeartEyesFill } from "react-icons/bs";
+import { TbListDetails } from "react-icons/tb";
 import { LuClipboardEdit } from "react-icons/lu";
 import { MdDeleteSweep } from "react-icons/md";
 import { imageURL } from "../../../api/config";
@@ -55,9 +55,9 @@ const ProductList = () => {
 
   return (
     <>
-      <h1>ProductList</h1>
+      <h3 className="text-success">Tất cả sản phẩm</h3>
       <button style={{ border: "none" }}>
-        <Link className="btn btn-primary mb-2" to="/admin/addProduct">
+        <Link className="btn btn-primary mb-4" to="/admin/addProduct">
           Thêm sản phẩm
         </Link>
       </button>
@@ -88,8 +88,8 @@ const ProductList = () => {
                 <td>{product.cat_name}</td>
                 <td>{product.price}</td>
                 <td>
-                  <Link to={`/products/${product.slug}`} className="btn ">
-                    <BsEmojiHeartEyesFill />
+                  <Link to={`/admin/showproduct`} className="btn ">
+                    <TbListDetails />
                   </Link>
                   <Link
                     to={`/admin/editproduct/${product.slug}`}
@@ -109,7 +109,7 @@ const ProductList = () => {
           })}
         </tbody>
       </table>
-      <ul className="pagination">
+      <ul className="pagination d-flex justify-content-center mt-4">
         <li className="page-item">
           <Link className="page-link" to={`/admin/products/${page - 1}`}>
             Previous

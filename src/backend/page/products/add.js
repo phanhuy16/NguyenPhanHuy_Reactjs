@@ -3,6 +3,7 @@ import apiCategory from "../../../api/apiCategory";
 import apiBrand from "../../../api/apiBrand";
 import axiosInstance from "../../../api/axios";
 import apiProduct from "../../../api/apiProduct";
+import { useNavigate } from "react-router-dom";
 
 const ProductAdd = () => {
   const [productName, setProductName] = useState("");
@@ -17,6 +18,8 @@ const ProductAdd = () => {
 
   const [categories, setCategories] = useState([]);
   const [brands, setBrands] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     apiCategory.getAll().then((res) => {
@@ -65,7 +68,6 @@ const ProductAdd = () => {
       brand_id: brandId,
       category: catId,
     };
-    // console.log("Product data: ", productData);
 
     let file = new FormData();
     file.append("files", image);
@@ -76,11 +78,12 @@ const ProductAdd = () => {
       .then(async (res) => {
         const fileId = res.data[0].id;
         productData.image.push(fileId);
-        // console.log("Product data: ", productData);
         axiosInstance.enableJson();
         const responseProduct = await apiProduct.createProduct({
           data: productData,
         });
+        alert("Thêm thành công");
+        navigate("/admin/products/1");
         console.log("Successful", responseProduct);
       })
       .catch((err) => {

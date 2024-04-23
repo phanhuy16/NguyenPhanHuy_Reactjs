@@ -47,7 +47,7 @@ const cartReducer = (state = initCart, action) => {
     case "TOTAL_CART":
       let total = 0;
       state.carts.map((item) => {
-        total += item.price + item.quantity;
+        return (total += item.price * item.quantity);
       });
       const newState = {
         ...state,

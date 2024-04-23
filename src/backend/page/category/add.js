@@ -35,7 +35,6 @@ const CategoryAdd = () => {
       parent_id: parseInt(parentId),
       slug: slug,
     };
-    // console.log(category);
     try {
       const response = await apiCategory.createCategory({ data: category });
       console.log(response);

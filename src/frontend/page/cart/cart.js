@@ -14,12 +14,9 @@ const Cart = () => {
   const navigate = useNavigate();
 
   const handleCheckout = () => {
-    // Kiểm tra xem người dùng đã đăng nhập chưa
-    // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
     if (!user || !user.username) {
       navigate("/login");
     } else {
-      // Nếu đã đăng nhập, chuyển hướng đến trang thanh toán
       navigate("/checkout");
     }
   };

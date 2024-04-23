@@ -7,5 +7,17 @@ const apiUser = {
   loginUser: (data) => {
     return axiosInstance.post("/auth/local", data);
   },
+
+  getAll: () => {
+    return axiosInstance.get("/users").then((res) => res.data);
+  },
+
+  // getDetailUserById: (id) => {
+  //   return axiosInstance.get(`/users/${id}`);
+  // },
+
+  getUserById: (id) => {
+    return axiosInstance.get(`/users/${id}`);
+  },
 };
 export default apiUser;

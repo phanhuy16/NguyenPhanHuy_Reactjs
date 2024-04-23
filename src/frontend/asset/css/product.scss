@@ -315,26 +315,22 @@ li {
   list-style: none;
 }
 
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .submenu {
   position: absolute;
   background-color: #fff;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   opacity: 0;
+  // visibility: hidden;
   transform: translateY(-25px);
   transition: opacity 0.3s, transform 0.5s;
+
 }
 
 .nav-item:hover .submenu {
   display: block;
   opacity: 1;
+  visibility: visible;
   transform: translateY(11px);
 }
 
@@ -353,6 +349,56 @@ li {
 .submenu li a:hover {
   background-color: #f2f2f2;
 }
+
+/* CSS cho dropdown cấp hai */
+
+.submenu {
+  li {
+    position: relative;
+  }
+}
+
+.submenu li:hover>.sub {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sub {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(55%);
+  min-width: 150px;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+.submenu {
+  .sub {
+    li:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+/* Tùy chỉnh link trong submenu */
+.submenu {
+  .sub {
+    li {
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Hiệu ứng khi di chuột qua link trong submenu */
+
 
 //---------------users----------------------
 .user:hover .list-user {

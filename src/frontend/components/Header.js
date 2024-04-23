@@ -126,7 +126,7 @@ export default function Header() {
                             <Link to={`/products-by-cat/${submenu.slug}`}>
                               {submenu.name}
                             </Link>
-                            <ul>
+                            <ul className="sub">
                               {subMenu.map((sub, index) => {
                                 return sub.parent === submenu.id ? (
                                   <li key={index}>
